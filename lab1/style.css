@@ -25,7 +25,7 @@ body {
     margin: auto;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
 }
@@ -36,17 +36,15 @@ h1, h2, h3 {
     margin-bottom: 70px;
 }
 
-
 /* HEADER */
+
 header {
     background: rgba(10, 31, 68, 0.85);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .header-wrapper {
@@ -59,37 +57,28 @@ header {
     color: var(--white);
     font-size: 30px;
     font-weight: 700;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-.logo:hover {
-    color: var(--sand);
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 45px;
+    gap: 40px;
 }
 
 .nav-menu a {
-    color: var(--white);
+    color: white;
     text-decoration: none;
-    font-weight: 500;
     position: relative;
-    padding-bottom: 5px;
-    transition: 0.3s;
 }
 
 .nav-menu a::after {
     content: "";
-    position: absolute;
     width: 0%;
     height: 2px;
     background: var(--sand);
+    position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -4px;
     transition: 0.3s;
 }
 
@@ -97,11 +86,8 @@ header {
     width: 100%;
 }
 
-.nav-menu a:hover {
-    color: var(--sand);
-}
-
 /* HERO */
+
 .hero {
     position: relative;
     height: 90vh;
@@ -109,31 +95,25 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #f5f1e8;
-    padding: 20px;
-    overflow: hidden;
+    color: white;
 }
 
-/* ФОН */
 .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        rgba(10, 25, 47, 0.4),
-        rgba(10, 25, 47, 0.4)
-    ),
-    url("images/hero.jpg") center/cover no-repeat;
-    
-    filter: blur(6px);   /* ← тут регулюється розмиття */
-    transform: scale(1.05); /* щоб не було білих країв після blur */
-    z-index: 0;
+    background:
+    linear-gradient(rgba(10,25,47,0.4),rgba(10,25,47,0.4)),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
+
+    filter: blur(6px);
+    transform: scale(1.05);
 }
 
-/* Контент поверх фону */
-.hero > * {
+.hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero h1 {
@@ -147,19 +127,20 @@ header {
 }
 
 .btn {
-    background-color: var(--navy);
-    color: var(--white);
+    background: var(--navy);
+    color: white;
     padding: 15px 40px;
-    border-radius: 50px;
+    border-radius: 40px;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: var(--accent);
+    background: var(--accent);
 }
 
-/* CARDS */
+/* ARTICLES */
+
 .articles-container {
     display: flex;
     gap: 40px;
@@ -167,7 +148,7 @@ header {
 }
 
 .card {
-    background-color: var(--white);
+    background: white;
     border-radius: 20px;
     overflow: hidden;
     flex: 1 1 30%;
@@ -183,6 +164,11 @@ header {
     width: 100%;
     height: 260px;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
 }
 
 .card-content {
@@ -194,94 +180,226 @@ header {
     color: gray;
 }
 
-/* POSTS */
-.post-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+/* MY POSTS (НОВА СЕКЦІЯ) */
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 40px;
 }
 
-.post-list li {
-    background-color: var(--white);
-    padding: 25px;
-    border-radius: 16px;
-    display: flex;
-    justify-content: space-between;
+.post-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
-.edit {
-    color: var(--accent);
+.post-card:hover {
+    transform: translateY(-10px);
+}
+
+.post-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-top h4 {
+    font-size: 18px;
+}
+
+.post-top span {
+    font-size: 13px;
+    color: gray;
+}
+
+.post-card p {
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+.edit-btn {
+    background: var(--navy);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.edit:hover {
-    text-decoration: underline;
+.edit-btn:hover {
+    background: var(--accent);
 }
 
-/* SINGLE POST */
-.single-post {
-    background-color: var(--white);
-    padding: 60px;
-    border-radius: 24px;
+.travel-article{
+background:white;
+padding:70px;
+border-radius:24px;
+max-width:900px;
+margin:auto;
+line-height:1.9;
+font-size:17px;
+box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
 
-.single-post img {
-    width: 100%;
-    margin: 50px 0;
-    border-radius: 24px;
+.article-header{
+margin-bottom:30px;
+}
+
+.article-header h3{
+font-size:32px;
+margin-bottom:8px;
+}
+
+.article-meta{
+font-size:14px;
+color:gray;
+}
+
+.travel-article img{
+width:100%;
+border-radius:20px;
+margin:40px 0;
+}
+
+.travel-article p{
+margin-bottom:25px;
+}
+
+.travel-article blockquote{
+font-size:22px;
+font-style:italic;
+border-left:4px solid var(--accent);
+padding-left:20px;
+margin:40px 0;
+color:#333;
 }
 
 /* FOOTER */
-footer {
-    background: linear-gradient(135deg, #081733, #0A1F44);
-    color: var(--white);
-    padding: 100px 0 40px;
-    margin-top: 140px;
+
+/* FOOTER NEW */
+
+footer{
+background:linear-gradient(135deg,#081733,#0A1F44);
+color:white;
+margin-top:140px;
+padding-top:90px;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:50px;
 }
 
-.footer-content h3 {
-    font-family: 'Montserrat', sans-serif;
-    margin-bottom: 20px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.footer-brand h2{
+font-size:28px;
+margin-bottom:15px;
 }
 
-.footer-content p {
-    margin-bottom: 10px;
-    opacity: 0.8;
-    transition: 0.3s;
-    cursor: pointer;
+.footer-brand p{
+opacity:0.8;
+font-size:14px;
+max-width:260px;
 }
 
-.footer-content p:hover {
-    opacity: 1;
-    transform: translateX(5px);
+.footer-links ul{
+list-style:none;
 }
 
-footer .copyright {
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.6;
-    letter-spacing: 1px;
+.footer-links li{
+margin-bottom:10px;
 }
 
-/* ADAPTIVE */
+.footer-links a{
+color:white;
+text-decoration:none;
+opacity:0.8;
+transition:0.3s;
+}
+
+.footer-links a:hover{
+opacity:1;
+padding-left:5px;
+}
+
+.footer-social .social-icons{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.footer-social a{
+color:white;
+text-decoration:none;
+opacity:0.8;
+transition:0.3s;
+}
+
+.footer-social a:hover{
+opacity:1;
+}
+
+.footer-newsletter p{
+font-size:14px;
+opacity:0.8;
+margin-bottom:15px;
+}
+
+.newsletter-box{
+display:flex;
+background:white;
+border-radius:30px;
+overflow:hidden;
+}
+
+.newsletter-box input{
+border:none;
+padding:10px 15px;
+flex:1;
+outline:none;
+}
+
+.newsletter-box button{
+border:none;
+background:var(--accent);
+color:white;
+padding:10px 20px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.newsletter-box button:hover{
+background:#4f6f8f;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:70px;
+padding:25px 0;
+font-size:13px;
+opacity:0.6;
+border-top:1px solid rgba(255,255,255,0.1);
+}
+
+/* RESPONSIVE */
+
 @media (max-width: 768px) {
+
     .articles-container {
         flex-direction: column;
-    }
-
-    .header-wrapper {
-        flex-direction: column;
-        gap: 20px;
     }
 
     .footer-content {
@@ -290,11 +408,13 @@ footer .copyright {
     }
 
     .hero h1 {
-        font-size: 48px;
+        font-size: 46px;
     }
+
 }
 
 @media (max-width: 480px) {
+
     .nav-menu {
         flex-direction: column;
         align-items: center;
@@ -304,7 +424,6 @@ footer .copyright {
         font-size: 32px;
     }
 
-    body {
-        font-size: 14px;
-    }
+    
+
 }

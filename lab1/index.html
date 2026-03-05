@@ -1,125 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Northbound</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Northbound</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Нові сучасні шрифти -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-    <div class="container header-wrapper">
-        <h1 class="logo">Northbound</h1>
+<div class="container header-wrapper">
+<h1 class="logo">Northbound</h1>
 
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#my-posts">My Posts</a></li>
-                <li><a href="#publication">Publication</a></li>
-            </ul>
-        </nav>
-    </div>
+<nav>
+<ul class="nav-menu">
+<li><a href="#articles">Articles</a></li>
+<li><a href="#my-posts">My Posts</a></li>
+<li><a href="#publication">Publication</a></li>
+</ul>
+</nav>
+
+</div>
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <h1>Travel beyond the ordinary</h1>
-        <p>Stories shaped by movement, light and distance</p>
-        <a href="#articles" class="btn">Читати статті</a>
-    </div>
+<div class="hero-content">
+<h1>Travel beyond the ordinary</h1>
+<p>Stories shaped by movement, light and distance</p>
+<a href="#articles" class="btn">Читати статті</a>
+</div>
 </section>
 
 <main class="container">
 
-    <section id="articles">
-        <h2 class="section-title">Latest Adventures</h2>
+<section id="articles">
+<h2 class="section-title">Latest Adventures</h2>
 
-        <div class="articles-container">
+<div class="articles-container">
 
-            <article class="card">
-                <img src="images/mountain.jpg" alt="Mountain">
-                <div class="card-content">
-                    <h3>Mountain Escape</h3>
-                    <p>Silence, altitude and endless horizons.</p>
-                    <span class="date">March 2026</span>
-                </div>
-            </article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80">
+<div class="card-content">
+<h3>Mountain Escape</h3>
+<p>Silence, altitude and endless horizons.</p>
+<span class="date">March 2026</span>
+</div>
+</article>
 
-            <article class="card">
-                <img src="images/ocean.jpg" alt="Ocean">
-                <div class="card-content">
-                    <h3>Ocean Diaries</h3>
-                    <p>Salt air and golden reflections.</p>
-                    <span class="date">April 2026</span>
-                </div>
-            </article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80">
+<div class="card-content">
+<h3>Ocean Diaries</h3>
+<p>Salt air and golden reflections.</p>
+<span class="date">April 2026</span>
+</div>
+</article>
 
-            <article class="card">
-                <img src="images/city.jpg" alt="City">
-                <div class="card-content">
-                    <h3>City Stories</h3>
-                    <p>Architecture, rhythm and timeless streets.</p>
-                    <span class="date">May 2026</span>
-                </div>
-            </article>
+<article class="card">
+<img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=900&q=80">
+<div class="card-content">
+<h3>City Stories</h3>
+<p>Architecture, rhythm and timeless streets.</p>
+<span class="date">May 2026</span>
+</div>
+</article>
 
-        </div>
-    </section>
+</div>
+</section>
 
-    <section id="my-posts">
-        <h2 class="section-title">My Posts</h2>
 
-        <ul class="post-list">
-            <li>Autumn in Prague <span class="edit">Edit</span></li>
-            <li>Italian Summer <span class="edit">Edit</span></li>
-            <li>Nordic Lights <span class="edit">Edit</span></li>
-        </ul>
-    </section>
+<section id="my-posts">
+<h2 class="section-title">My Posts</h2>
 
-    <section id="publication">
-        <h2 class="section-title">A Moment in Italy</h2>
+<div class="posts-grid">
 
-        <div class="single-post">
-            <p>
-                Italy unfolds slowly — textured walls, warm light and
-                quiet mornings with espresso.
-            </p>
+<div class="post-card">
+<div class="post-top">
+<img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar">
+<div>
+<h4>Autumn in Prague</h4>
+<span>October 2025</span>
+</div>
+</div>
 
-            <img src="images/italy.jpg" alt="Italy">
+<p>
+Golden leaves, medieval streets and quiet cafés along the river.
+</p>
 
-            <p>
-                From Rome to Florence, every street feels cinematic.
-            </p>
+<button class="edit-btn">Edit</button>
+</div>
 
-            <p>
-                Some places stay with you forever.
-            </p>
-        </div>
-    </section>
+
+<div class="post-card">
+<div class="post-top">
+<img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar">
+<div>
+<h4>Italian Summer</h4>
+<span>July 2025</span>
+</div>
+</div>
+
+<p>
+Gelato, warm evenings and endless piazzas.
+</p>
+
+<button class="edit-btn">Edit</button>
+</div>
+
+
+<div class="post-card">
+<div class="post-top">
+<img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar">
+<div>
+<h4>Nordic Lights</h4>
+<span>January 2026</span>
+</div>
+</div>
+
+<p>
+Frozen silence and green waves dancing across the sky.
+</p>
+
+<button class="edit-btn">Edit</button>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="publication">
+<h2 class="section-title">A Moment in France</h2>
+
+<article class="travel-article">
+
+<div class="article-header">
+<h3>Morning Light in Paris</h3>
+<p class="article-meta">by Anna Traveler • May 2026</p>
+</div>
+
+<p>
+Paris wakes slowly. Early in the morning the streets are still quiet,
+the cafés are only starting to open and the smell of fresh croissants
+floats through the air.
+</p>
+
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80" alt="Paris">
+
+<p>
+Walking along the Seine feels like moving through a film scene.
+Soft golden light touches the old buildings and the bridges reflect
+in the water.
+</p>
+
+<blockquote>
+Travel is not just about places — it’s about the feeling a city leaves
+inside you.
+</blockquote>
+
+<p>
+Every street in Paris tells a story: small bookstores,
+hidden courtyards and cafés where people sit for hours
+watching the city move around them.
+</p>
+
+<img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=1200&q=80" alt="Paris street">
+
+<p>
+By evening the city changes again. Lights appear on the bridges,
+music comes from open windows and the streets feel alive.
+</p>
+
+<p>
+Some places you visit once and forget. Others become a memory you
+carry for years.
+</p>
+
+</article>
+</section>
 
 </main>
 
 <footer>
-    <div class="container footer-content">
-        <div>
-            <h3>Contact</h3>
-            <p>travel@blog.com</p>
-            <p>+380 00 000 00 00</p>
-        </div>
 
-        <div>
-            <h3>Social</h3>
-            <p>Facebook</p>
-            <p>Instagram</p>
-        </div>
-    </div>
+<div class="container footer-grid">
 
-    <p class="copyright">© 2026 Northbound</p>
+<div class="footer-brand">
+<h2>Northbound</h2>
+<p>
+A travel journal about movement, light and distant places.
+Stories from cities, oceans and quiet mountains.
+</p>
+</div>
+
+<div class="footer-links">
+<h3>Explore</h3>
+<ul>
+<li><a href="#articles">Articles</a></li>
+<li><a href="#my-posts">My Posts</a></li>
+<li><a href="#publication">Publication</a></li>
+</ul>
+</div>
+
+<div class="footer-social">
+<h3>Follow</h3>
+<div class="social-icons">
+<a href="#">Instagram</a>
+<a href="#">Facebook</a>
+<a href="#">Pinterest</a>
+</div>
+</div>
+
+<div class="footer-newsletter">
+<h3>Newsletter</h3>
+<p>Get new travel stories once a month.</p>
+
+<div class="newsletter-box">
+<input type="email" placeholder="Your email">
+<button>Join</button>
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 Northbound — Travel Journal</p>
+</div>
+
 </footer>
 
 </body>
